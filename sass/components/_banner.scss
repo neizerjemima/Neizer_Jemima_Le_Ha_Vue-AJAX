@@ -1,0 +1,45 @@
+@use '../abstracts/variables' as a;
+
+
+#banner{
+    display: none;
+    justify-content: flex-start;
+    background: a.$secondary-color;
+    overflow: hidden;
+
+}
+h4{
+    text-transform: uppercase;
+    color: a.$primary-color;
+    -webkit-text-stroke-width: 0.1px;
+    white-space: nowrap;
+    padding: 0 6rem;
+    letter-spacing: 1px;
+    animation: move-rtl 6000ms linear infinite;
+}
+@keyframes move-rtl {
+    0%{
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+
+
+}
+
+hr{
+    display: none;
+}
+@media screen and (min-width: 768px) {
+    #banner{
+        display: flex;
+        justify-content: flex-start;
+        background: a.$secondary-color;
+        overflow: hidden;
+    
+    }
+    hr{
+        display: block;
+    }
+}

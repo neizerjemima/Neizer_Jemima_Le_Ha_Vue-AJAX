@@ -1,0 +1,95 @@
+@use '../abstracts/variables' as a;
+.card-container{
+    display: flex;
+    justify-self: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.card{
+    width: 200px;
+    border-radius: 8px;
+    background-color: a.$third-color;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 20px;
+} 
+.card img{
+    width: 100%;
+    height: auto;
+
+}
+
+
+.wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+   
+  
+    
+}
+.shape{
+    width: 100%;
+    height: 100%;
+    margin-right: 15px;
+    padding: 2rem 1rem;
+    background-color: a.$third-color;
+    position: relative;
+    display: flex;
+ 
+    border-radius: 10px;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+    transition: 0.5s ease-in-out;
+    &:hover{
+        transform: translateY(20px);
+    }
+}
+
+.shape::before{
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,176,155,0.5), rgba(150,176,155,0.5));
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 0;
+    border-radius: 10px;
+}
+.shape:hover::before{
+    opacity: 1;
+}
+.shape img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.info{
+    position: relative;
+    z-index: 3;
+    color:a.$body-text-color;
+    //opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+    
+   
+}
+
+.info:hover{
+    // opacity: 1;
+    transform: translateY(0px);
+}
+.skincare{
+    font-size: 20px;
+    
+}
+
