@@ -11,10 +11,10 @@ const makeup = Vue.createApp({
                 console.error(error);
             });
 
-            fetch("http://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick")
+            fetch("http://makeup-api.herokuapp.com/api/v1/products.json?")
             .then(res => res.json())
             .then(data => {
-                this.makeupData = data.slice(-5);
+                this.makeupData = data.slice(-10, -5);
             })
             .catch(error => {
                 console.log("error", error); // Log any errors
@@ -28,7 +28,6 @@ const makeup = Vue.createApp({
             makeupData: [],
             lipsData: [],
             selectedMakeup: null,
-            selectedMake: null,
             name: "",
             brand: "",
             description: "",
@@ -41,16 +40,10 @@ const makeup = Vue.createApp({
     },
 
     methods: {
-        showMakeupContent(makeup, makeupProduct, event) {
+        showMakeupContent(makeup, event) {
             this.selectedMakeup = makeup;
-            this.selectedMake = makeupProduct;
             const makeupContentId = 'makeup_' + makeup.id;
-            const makeupConId = 'makeups_' + makeupProduct.id;
-            // const makeupproId = 'makeuppro_' + makeuppro.id;
             document.getElementById(makeupContentId).scrollIntoView({
-            behavior: 'smooth'
-        });
-        document.getElementById(makeupConId).scrollIntoView({
             behavior: 'smooth'
         });
         },
