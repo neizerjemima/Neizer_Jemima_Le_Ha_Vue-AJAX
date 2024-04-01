@@ -43,13 +43,13 @@
     }
 }
 
+form button { display: none;}
 
 
 .fa-search{
     font-size: 18px;
     color:a.$primary-color;
-    display: none;
-    
+    display: none;  
 }
 
 #contact{
@@ -70,7 +70,6 @@
         outline: none;
     }
     .search{
-    
         width: 200px;
         height: 30px;
         margin-top: 10px;
@@ -80,12 +79,20 @@
         display: block;
     
 }
+#search-container button {
+    margin-top: 14px;
+    margin-left: 272px;
+    border: none;
+    background-color: #e4e6d9;
+    cursor: pointer;
+}
+form button { display: block;}
 .fa-search{
     font-size: 18px;
     color:a.$primary-color;
-    display: block;
-    
+    display: block;   
 }
+
 }
 @media screen and (min-width: 1200px) {
     .input-field{
@@ -110,7 +117,6 @@
 .fa-search{
     font-size: 18px;
     color:a.$primary-color;
-    display: block;
-    
+    display: block;   
 }
 }
