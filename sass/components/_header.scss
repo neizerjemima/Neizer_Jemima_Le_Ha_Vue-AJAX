@@ -1,0 +1,153 @@
+@use '../abstracts/variables' as a;
+
+
+header{
+    margin-top: 0;
+    background-color: a.$secondary-color;
+    
+
+
+}
+
+header .logo {
+    width: 50%;
+    // margin-top: 10px;
+
+}
+.fa-user,.fa-basket-shopping { display: none;}
+.sticky-header {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+#hamburger-menu {
+    visibility: hidden;
+    background-color: a.$secondary-color;
+    
+    color: a.$body-text-color;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+
+    & ul li{
+    list-style: none;
+    line-height: 4em;
+    font-size: 20px;
+
+    }
+    & ul li:hover{
+        cursor: pointer;
+        color: a.$primary-color;
+
+    }
+}
+
+
+#hamburger-open, #hamburger-close {
+    font-size: 30px;
+    margin-top: 20px;
+    color: a.$primary-color;
+    &:hover{
+        cursor: pointer;
+
+    }
+}
+
+
+.main-nav {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: 'Parisienne-Regular';
+    & ul li{
+    list-style-type: none;
+    display: inline;
+    margin-right: 50px;
+    font-size: 25px;
+    color: a.$body-text-color;
+
+    }
+    & ul li:last-of-type{
+        margin-right: 0;
+    }
+    & ul li:hover{
+    padding-bottom: 2px;
+    border-bottom: 2px solid a.$primary-color;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+
+    }
+}
+
+.side-socials ul li{
+    display: inline;
+    margin-right: 15px;
+    font-size: 28px;
+    color: a.$primary-color;
+    & ul li:hover{
+        color: a.$primary-color;
+
+    }
+    & ul li:last-of-type{
+        margin-right: 0;
+    }
+}
+
+.sec{
+    display: none;
+    ul li{
+        list-style: none;
+        display: inline;
+        margin-right: 20px;
+        font-size: 20px;
+        color: a.$body-text-color;
+    
+        &:hover {
+            color: a.$primary-color;
+        padding-bottom: 2px;
+        border-bottom: 2px solid a.$primary-color;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        }
+    }
+} 
+
+
+
+
+@media screen and (min-width: 768px) {
+    #hamburger-open, #hamburger-close, .mobile {display: none;}
+
+    .tablet ul li:first-child{
+    grid-column: 8/9;
+    }
+
+    .fa-user,.fa-basket-shopping { 
+        display: block;
+        margin-top: 10px;
+        letter-spacing: 2px;
+    }
+
+    #hamburger-menu { display: none;}
+    .sec {display: block;}
+
+    
+}
+
+@media screen and (min-width: 1200px) {
+    #search-container button{ 
+        margin-top: 14px;
+        margin-left: 263px;
+        border: none;
+        background-color: #E4E6D9;
+        cursor: pointer;
+        i{ margin-left: 0;}
+    }
+}

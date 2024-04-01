@@ -1,0 +1,155 @@
+@use '../abstracts/variables' as a;
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color:a.$secondary-color;
+}
+
+input, textarea{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3{
+    font-family: a.$heading-font-family;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 35px;
+}
+h4{
+    font-family: a.$heading-font-family;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 15px;
+}
+h5{
+    font-family: a.$heading-font-family;
+    font-weight: 100;
+    font-size: 15px;
+}
+h5 a{
+    text-decoration: none;
+    color: a.$primary-color;
+}
+h5 a:hover{
+    text-decoration: none;
+    color: a.$body-text-color;
+}
+p{
+    line-height: 2em;
+    font-size: a.$base-font-size;
+    color: a.$body-text-color;
+    font-family: a.$body-font-family;
+}
+.check{
+    margin-top: 20px;
+    text-decoration: underline;
+    text-align: center;
+}
+.check:hover{
+    color: a.$primary-color;
+}
+.text{
+    color: a.$body-text-color;  
+}
+.spacer{
+    margin-top: 60px;
+}
+#app{ height: fit-content;}
+
+.txt-spacer{
+    margin-top: 25px;
+}
+.section-divider{
+    color: a.$primary-color;
+    
+}
+.heading{
+   margin: 0;
+   font-size: 20px;
+}
+.hero-text{
+    margin-top: 60px;
+
+    ul li{
+        list-style: none;
+        margin-bottom: 37px;
+        line-height: 2em;
+    font-size: a.$base-font-size;
+        font-family: a.$body-font-family;
+    }
+}
+.wel{
+    margin-top: 350px;
+    color: white;
+    font-size: 15px;
+    
+    
+}
+.view{
+    text-decoration: underline black;
+    margin-top: 70px;
+    margin-left: 90px;
+    
+}
+.view:hover{
+    color: a.$primary-color;
+    text-decoration: underline a.$primary-color;
+}
+
+.foot ul li{
+    color: white;
+}
+.logo{
+    margin-top: 30px;
+}
+.mob{
+    margin-top: 80px;
+}
+@media screen and (min-width: 768px) {
+    .heading{
+        margin: 0;
+        font-size:35px ;
+     }
+     .view{
+        text-decoration: underline black;
+        margin-top: 70px;
+        
+    }
+    .view:hover{
+        color: a.$primary-color;
+        text-decoration: underline a.$primary-color;
+    }
+    .logo{
+        margin-top: 0;
+    }
+    .check{
+        margin-top: 20px;
+        text-decoration: underline;
+        text-align: left;
+    }
+    .mob{
+        margin-top: 0;
+    }
+}
+.spacers{
+    margin-top: 100px;
+}
+
+@media screen and (min-width: 1200px) {
+    .logo{
+        margin-top: 0;
+    }
+    .check{
+        margin-top: 20px;
+        text-decoration: underline;
+        text-align: left;
+    }
+    .mob{
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,31 @@
+
+.intro{
+    background-image: url(../images/flower.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    color: white;
+}
+.hero{
+    width: 400px;
+    height: 300px;
+} 
+.p-image{
+   width: 100%;
+   height: auto;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+
+
+}
+.image{
+    margin-top: 80px;
+   
+}
+@media screen and (min-width: 768px) {
+    .hero{
+    width: 500px;
+    height: 300px;
+} 
+}
