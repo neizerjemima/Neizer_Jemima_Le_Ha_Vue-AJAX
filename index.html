@@ -144,14 +144,15 @@
         </div>
         <div v-if="selectedMakeup" :id="'makeup_' + selectedMakeup.id" class="col-span-full grid-con spacer">
             <div class="col-span-full m-col-start-2 m-col-end-6 l-col-start-2 l-col-end-6 hero">
-                <img :src="'images/' + selectedMakeup.product_image" alt="Product hero image">
+                <img :src="'images/' + selectedMakeup.product_image" alt="">
+                <img :src="selectedMakeup.image_link" alt="">
             </div>
         
             <div class="col-span-full m-col-start-6 m-col-end-12 l-col-start-6 l-col-end-12 box-right hero-text mob">
                 <p class="text">BRAND OF THE YEAR</p>
                 <h3 class="text ">{{ selectedMakeup.brand }}</h3>
                 <p class="text ">{{ selectedMakeup.description }}
-                </p>
+                </p>   
                 <p class="text">BENEFITS:</p>
                     <p v-for="(benefit, index) in selectedMakeup.benefits" :key="index">{{ benefit.benefits.benefit_list }}</p>
                  <p class="txt-spacer">
@@ -159,23 +160,7 @@
             </div>
             
         </div>  
-/////////////////
-        <div v-if="selectedMake" :id="'makeups_' + selectedMake.id" class="col-span-full grid-con spacer">
-            <div class="col-span-full m-col-start-2 m-col-end-6 l-col-start-2 l-col-end-6 hero">
-                <img :src="selectedMake.image_link" alt="Product hero image">
-            </div>
-        
-            <div class="col-span-full m-col-start-6 m-col-end-12 l-col-start-6 l-col-end-12 box-right hero-text mob">
-                <p class="text">BRAND OF THE YEAR</p>
-                <h3 class="text ">{{ selectedMake.brand }}</h3>
-                <p class="text ">{{ selectedMake.description }}</p>
-                <!-- <p class="text">BENEFITS:</p>
-                    <p v-for="(benefit, index) in selectedMakeup.benefits" :key="index">{{ benefit.benefits.benefit_list }}</p>
-                 <p class="txt-spacer">
-                <a :href="selectedMakeup.product_link" class="button-style txt-spacer" target="_blank">BROWSE</a></p>   -->
-            </div>
-            
-        </div>       
+
 
         <p class="check col-span-full m-col-start-8 m-col-end-12 l-col-start-9 l-col-end-12" id="scrollToMakeup">*Check out our other products</p>
         
