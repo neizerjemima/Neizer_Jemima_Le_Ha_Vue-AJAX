@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
@@ -63,7 +63,7 @@
             </form>      
         </div>
 
-        <div class="col-start-1 col-end-4 m-col-start-2 m-col-end-5 l-col-start-6 l-col-end-9 xl-col-start-2 xl-col-end-5">
+        <div class="col-start-1 col-end-4 m-col-start-6 m-col-end-9 l-col-start-6 l-col-end-9 xl-col-start-6 xl-col-end-9">
             <h3 class="hidden">Logo</h3>
             <a href="index.html"><img class="logo" src="./images/logo.png" alt="logo"></a>
         </div>
@@ -96,8 +96,8 @@
     </section>
 
     <section class="grid-con box-center spacer ">
-        <h3 class="col-span-full m-col-start-3 m-col-end-10 l-col-start-4 l-col-end-10">feel good and do good</h3>
-        <p class="col-span-full m-col-start-4 m-col-end-9 l-col-start-4 l-col-end-10">We know you want the beuty brands you buy to be downright lovely to use and leave you feeling good about your choice.
+        <h3 class="col-span-full m-col-start-4 m-col-end-10 l-col-start-4 l-col-end-10">feel good and do good</h3>
+        <p class="col-span-full m-col-start-4 m-col-end-10 l-col-start-4 l-col-end-10">We know you want the beuty brands you buy to be downright lovely to use and leave you feeling good about your choice.
             At Chanceux we make that easy for you because we've sniffed out the most exciting consious products and brought them all together to create a one-stop-shop for feel good, do-good beauty.
         </p>
         
@@ -120,7 +120,7 @@
     <section class="grid-con" id="app">
         <h3 class="col-span-2 m-col-start-2 m-col-end-5 l-col-start-2 l-col-end-6 spacer">latest makeups</h3>
 
-        <p class="col-span-2 m-col-start-8 m-col-end-12 l-col-start-8 l-col-end-13 spacer view">Double click the text on the image</p>
+        <p class="col-span-full m-col-start-7 m-col-end-12 l-col-start-8 l-col-end-13 spacer view">Double click the text on the image</p>
 
         <div class="col-start-2 col-end-4 m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12 card-container">
 
@@ -132,17 +132,16 @@
                 </div>
             </div>
 
-            <div v-for="makeupProduct in makeupData" class="con box card">
+            <div v-for="makeupProduct in makeupData" class="con box card"  @click="showMakeupContent(makeupProduct)">
                 <img :src=" makeupProduct.image_link" alt="Product Image">
                 <div class="content">
-                    <h5><a href="#makeup">{{makeupProduct.name}}</a></h5>
+                    <h5><a href="#makeupProduct">{{makeupProduct.name}}</a></h5>
 
                 </div>
             </div>
            
 
         </div>
-
         <div v-if="selectedMakeup" :id="'makeup_' + selectedMakeup.id" class="col-span-full grid-con spacer">
             <div class="col-span-full m-col-start-2 m-col-end-6 l-col-start-2 l-col-end-6 hero">
                 <img :src="'images/' + selectedMakeup.product_image" alt="Product hero image">
@@ -159,9 +158,26 @@
                 <a :href="selectedMakeup.product_link" class="button-style txt-spacer" target="_blank">BROWSE</a></p>  
             </div>
             
+        </div>  
+/////////////////
+        <div v-if="selectedMake" :id="'makeups_' + selectedMake.id" class="col-span-full grid-con spacer">
+            <div class="col-span-full m-col-start-2 m-col-end-6 l-col-start-2 l-col-end-6 hero">
+                <img :src="selectedMake.image_link" alt="Product hero image">
+            </div>
+        
+            <div class="col-span-full m-col-start-6 m-col-end-12 l-col-start-6 l-col-end-12 box-right hero-text mob">
+                <p class="text">BRAND OF THE YEAR</p>
+                <h3 class="text ">{{ selectedMake.brand }}</h3>
+                <p class="text ">{{ selectedMake.description }}</p>
+                <!-- <p class="text">BENEFITS:</p>
+                    <p v-for="(benefit, index) in selectedMakeup.benefits" :key="index">{{ benefit.benefits.benefit_list }}</p>
+                 <p class="txt-spacer">
+                <a :href="selectedMakeup.product_link" class="button-style txt-spacer" target="_blank">BROWSE</a></p>   -->
+            </div>
+            
         </div>       
 
-        <p class="check col-span-full m-col-start-9 m-col-end-12 l-col-start-9 l-col-end-12" id="scrollToMakeup">*Check out our other products</p>
+        <p class="check col-span-full m-col-start-8 m-col-end-12 l-col-start-9 l-col-end-12" id="scrollToMakeup">*Check out our other products</p>
         
         <h3 class="col-span-2 m-col-start-2 m-col-end-5 l-col-start-2 l-col-end-6 spacers">popular collections</h3>
 
@@ -170,7 +186,7 @@
                     <img :src="makeupProduct.image_link" alt="Product">
                     <div class="info">
                         <h3 class="skincare">{{makeupProduct.name}}</h3>
-                        <p>${{price_sign}}{{makeupProduct.price}}</p>
+                        <p>${{makeupProduct.price}}</p>
                     </div>
                 </div>             
     
@@ -182,52 +198,6 @@
 
 
  
-
-     <!-- <section class="grid-con spacer">
-        <h3 class="col-span-2 m-col-start-2 m-col-end-5 l-col-start-2 l-col-end-6 spacer">popular collections</h3>
-
-        <div class="col-span-full m-col-start-2 m-col-end-12 l-col-start-2 l-col-end-12 wrapper spacer">
-            <div class=" box shape">
-                <img src="images/tonner.jpg" alt="Product">
-                <div class="info">
-                    <h3 class="skincare">Moisturizer</h3>
-                    <p>$40.00</p>
-                </div>
-            </div>
-            <div class="box shape">
-                <img src="images/p10.png" alt="Product">
-                <div class="info">
-                    <h3 class="skincare">Cleanser</h3>
-                    <p>$21.99</p>
-                </div>
-            </div>
-            <div class="box shape">
-                <img src="images/p6.jpg" alt="Product">
-                <div class="info">
-                    <h3 class="skincare">Michellar</h3>
-                    <p>$40.00</p>
-                </div>
-            </div>
-            <div class="box shape">
-                <img src="images/p4.jpg" alt="Product">
-                <div class="info">
-                    <h3 class="skincare">Handcream</h3>
-                    <p>$30.00</p>
-                </div>
-            </div>
-            <div class="box shape">
-                <img src="images/p5.jpg" alt="Product">
-                <div class="info">
-                    <h3 class="skincare">Tonner</h3>
-                    <p>$28.00</p>
-                </div>
-            </div>
-
-        </div>
-     </section>  -->
-
-
-
 
     <section id="abt" class="grid-con spacer box">
     <div class="col-span-full m-col-start-2 m-col-end-6 l-col-start-2 l-col-end-6 box-left hero-text">

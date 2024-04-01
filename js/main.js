@@ -1,6 +1,6 @@
 const makeup = Vue.createApp({
     created() {
-        makeup.innerHTML=spinner;
+
         fetch("http://localhost/Neizer_Jemima-API/public/lips")
             .then(res => res.json())
             .then(data => {
@@ -28,6 +28,7 @@ const makeup = Vue.createApp({
             makeupData: [],
             lipsData: [],
             selectedMakeup: null,
+            selectedMake: null,
             name: "",
             brand: "",
             description: "",
@@ -40,10 +41,16 @@ const makeup = Vue.createApp({
     },
 
     methods: {
-        showMakeupContent(makeup, event) {
+        showMakeupContent(makeup, makeupProduct, event) {
             this.selectedMakeup = makeup;
+            this.selectedMake = makeupProduct;
             const makeupContentId = 'makeup_' + makeup.id;
+            const makeupConId = 'makeups_' + makeupProduct.id;
+            // const makeupproId = 'makeuppro_' + makeuppro.id;
             document.getElementById(makeupContentId).scrollIntoView({
+            behavior: 'smooth'
+        });
+        document.getElementById(makeupConId).scrollIntoView({
             behavior: 'smooth'
         });
         },
